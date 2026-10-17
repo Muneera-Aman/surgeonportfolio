@@ -13,7 +13,7 @@ export default function About() {
     <>
       <section className="bg-[#edf7fa] py-24">
         <div className="container-wide">
-          <span className="eyebrow">ABOUT THE DOCTOR</span>
+          <span className="doctor">ABOUT THE DOCTOR</span>
 
           <h1 className="mt-5 max-w-3xl text-5xl font-semibold text-[#09233b] md:text-7xl">
             Professional care begins with understanding.
@@ -30,13 +30,13 @@ export default function About() {
         <Reveal>
           <img
             className="h-120 w-full rounded-4xl object-cover"
-            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1100&q=85"
+            src="/images/surgery.jpg"
             alt="Illustrative clinical consultation"
           />
         </Reveal>
 
         <Reveal>
-          <span className="eyebrow">PROFILE</span>
+          <span className="doctor">PROFILE</span>
 
           <h2 className="mt-4 text-4xl font-semibold">
             Dr. Khalid Khan Zadran

@@ -100,7 +100,7 @@ export default function Home() {
           <Reveal>
             <div className="relative overflow-hidden rounded-[36px] bg-[#bcdce8]">
               <img
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1000&q=85"
+                src="/images/doctorsphoto.jpg"
                 alt="Medical professional in a clinical setting; illustrative stock image"
                 loading="lazy"
                 className="h-105 w-full object-cover"
