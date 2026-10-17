@@ -1,2 +1,177 @@
-import { Link } from 'react-router-dom';import { ArrowUpRight, MapPin, CalendarDays, HeartPulse, ShieldCheck } from 'lucide-react';import Hero from '../components/Hero';import Reveal from '../components/Reveal';import ServiceCard from '../components/ServiceCard';import {services} from '../data/services';
-export default function Home(){return <><Hero/><section className="bg-[#071d35] py-8 text-white"><div className="container-wide grid gap-7 md:grid-cols-3">{[[HeartPulse,'Specialist care','Brain, spine & nervous system'],[MapPin,'Kabul location','Rifah Medical Complex'],[CalendarDays,'Plan your visit','Contact the clinic to schedule']].map(([Icon,title,sub])=><div key={title} className="flex items-center gap-4"><Icon className="text-[#67c5dd]" size={27}/><div><h3 className="text-sm font-bold">{title}</h3><p className="mt-1 text-xs text-slate-400">{sub}</p></div></div>)}</div></section><section className="section-pad container-wide"><Reveal><div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end"><div><span className="eyebrow">WHAT WE OFFER</span><h2 className="mt-4 max-w-xl text-4xl font-semibold text-[#09233b] md:text-5xl">Focused expertise for complex concerns.</h2></div><Link to="/services" className="btn-outline self-start">Explore all services <ArrowUpRight size={16}/></Link></div></Reveal><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">{services.map((s,i)=><Reveal key={s.num} delay={i*.08}><ServiceCard service={s}/></Reveal>)}</div></section><section className="section-pad bg-[#eaf5f8]"><div className="container-wide grid items-center gap-12 lg:grid-cols-2"><Reveal><div className="relative overflow-hidden rounded-[36px] bg-[#bcdce8]"><img className="h-[420px] w-full object-cover" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1000&q=85" alt="Medical professional in a clinical setting; illustrative stock image" loading="lazy"/><span className="absolute bottom-5 left-5 rounded-xl bg-white/95 px-4 py-3 text-xs font-semibold text-[#09233b]">Illustrative medical photography</span></div></Reveal><Reveal delay={.15}><span className="eyebrow">MEET YOUR SPECIALIST</span><h2 className="mt-4 text-4xl font-semibold leading-tight text-[#09233b] md:text-5xl">A considered approach to neurosurgical care.</h2><p className="mt-6 text-sm leading-8 text-slate-600">Dr. Khalid Khan Zadran is a Consultant Neurosurgeon and Brain & Spine Specialist based at Rifah Medical Complex in Kabul. Learn about the areas of consultation and how to prepare for your visit.</p><div className="mt-6 flex items-center gap-3 text-sm text-slate-700"><ShieldCheck size={20} className="text-[#087ea5]"/>Clear information. Respectful consultations.</div><Link className="btn-primary mt-8" to="/about">About the Doctor <ArrowUpRight size={16}/></Link></Reveal></div></section><section className="section-pad container-wide"><Reveal className="rounded-[36px] bg-[#0a3854] px-7 py-16 text-center text-white md:px-16"><span className="eyebrow !text-[#79d2e8]">TAKE THE NEXT STEP</span><h2 className="mx-auto mt-5 max-w-2xl text-4xl font-semibold md:text-5xl">Have questions about a brain or spine consultation?</h2><p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-slate-300">Contact the clinic to discuss appointment availability and the next steps for your visit.</p><Link to="/appointment" className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-bold text-[#09233b]">Request an Appointment <ArrowUpRight size={16}/></Link></Reveal></section></>}
+
+import { Link } from "react-router-dom";
+import {
+  ArrowUpRight,
+  MapPin,
+  CalendarDays,
+  HeartPulse,
+  ShieldCheck,
+} from "lucide-react";
+
+import Hero from "../components/Hero";
+import Reveal from "../components/Reveal";
+import ServiceCard from "../components/ServiceCard";
+import { services } from "../data/services";
+
+export default function Home() {
+  return (
+    <>
+      <Hero />
+
+      <section className="bg-[#071d35] py-8 text-white">
+        <div className="container-wide grid gap-7 md:grid-cols-3">
+          {[
+            [
+              HeartPulse,
+              "Specialist care",
+              "Brain, spine & nervous system",
+            ],
+            [
+              MapPin,
+              "Kabul location",
+              "Rifah Medical Complex",
+            ],
+            [
+              CalendarDays,
+              "Plan your visit",
+              "Contact the clinic to schedule",
+            ],
+          ].map(([Icon, title, sub]) => (
+            <div
+              key={title}
+              className="flex items-center gap-4"
+            >
+              <Icon
+                className="text-[#67c5dd]"
+                size={27}
+              />
+
+              <div>
+                <h3 className="text-sm font-bold">
+                  {title}
+                </h3>
+
+                <p className="mt-1 text-xs text-slate-400">
+                  {sub}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-pad container-wide">
+        <Reveal>
+          <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <span className="whatoffer">
+                WHAT WE OFFER
+              </span>
+
+              <h2 className="mt-4 max-w-xl text-4xl font-semibold text-[#09233b] md:text-5xl">
+                Focused expertise for complex concerns.
+              </h2>
+            </div>
+
+            <Link
+              to="/services"
+              className="btn-outline self-start"
+            >
+              Explore all services
+              <ArrowUpRight size={16} />
+            </Link>
+          </div>
+        </Reveal>
+
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          {services.map((service, index) => (
+            <Reveal
+              key={service.num}
+              delay={index * 0.08}
+            >
+              <ServiceCard service={service} />
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-pad bg-[#eaf5f8]">
+        <div className="container-wide grid items-center gap-12 lg:grid-cols-2">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-[36px] bg-[#bcdce8]">
+              <img
+                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1000&q=85"
+                alt="Medical professional in a clinical setting; illustrative stock image"
+                loading="lazy"
+                className="h-105 w-full object-cover"
+              />
+
+              <span className="absolute bottom-5 left-5 rounded-xl bg-white/95 px-4 py-3 text-xs font-semibold text-[#09233b]">
+                Illustrative medical photography
+              </span>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.15}>
+            <span className="whatoffer">
+              MEET YOUR SPECIALIST
+            </span>
+
+            <h2 className="mt-4 text-4xl font-semibold leading-tight text-[#09233b] md:text-5xl">
+              A considered approach to neurosurgical care.
+            </h2>
+
+            <p className="mt-6 text-sm leading-8 text-slate-600">
+              Dr. Khalid Khan Zadran is a Consultant Neurosurgeon
+              and Brain & Spine Specialist based at Rifah Medical
+              Complex in Kabul. Learn about the areas of consultation
+              and how to prepare for your visit.
+            </p>
+
+            <div className="mt-6 flex items-center gap-3 text-sm text-slate-700">
+              <ShieldCheck
+                size={20}
+                className="text-[#087ea5]"
+              />
+
+              Clear information. Respectful consultations.
+            </div>
+
+            <Link
+              to="/about"
+              className="btn-primary mt-8"
+            >
+              About the Doctor
+              <ArrowUpRight size={16} />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section-pad container-wide">
+        <Reveal className="rounded-[36px] bg-[#0a3854] px-7 py-16 text-center text-white md:px-16">
+          <span className="whatoffer text-[#79d2e8]!">
+            TAKE THE NEXT STEP
+          </span>
+
+          <h2 className="mx-auto mt-5 max-w-2xl text-4xl font-semibold md:text-5xl">
+            Have questions about a brain or spine consultation?
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-slate-300">
+            Contact the clinic to discuss appointment availability
+            and the next steps for your visit.
+          </p>
+
+          <Link
+            to="/appointment"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-7 py-4 text-sm font-bold text-[#09233b]"
+          >
+            Request an Appointment
+            <ArrowUpRight size={16} />
+          </Link>
+        </Reveal>
+      </section>
+    </>
+  );
+}

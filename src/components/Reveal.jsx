@@ -1,2 +1,28 @@
-import { motion, useReducedMotion } from 'motion/react';
-export default function Reveal({children,delay=0,className=''}){const reduce=useReducedMotion();return <motion.div className={className} initial={reduce?false:{opacity:0,y:32}} whileInView={{opacity:1,y:0}} viewport={{once:true,amount:.12}} transition={{duration:.65,delay}}>{children}</motion.div>}
+
+import { motion, useReducedMotion } from "motion/react";
+
+export default function Reveal({
+  children,
+  delay = 0,
+  className = "",
+}) {
+  const reduce = useReducedMotion();
+
+  return (
+    <motion.div
+      className={className}
+      initial={reduce ? false : { opacity: 0, y: 32 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{
+        once: true,
+        amount: 0.12,
+      }}
+      transition={{
+        duration: 0.65,
+        delay,
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
